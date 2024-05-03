@@ -1,52 +1,54 @@
-/* ubuntu-regular - cyrillic_latin */
-@font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/ubuntu-v20-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* ubuntu-500 - cyrillic_latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 500;
-    src: url('./fonts/ubuntu-v20-cyrillic_latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* ubuntu-700 - cyrillic_latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 700;
-    src: url('./fonts/ubuntu-v20-cyrillic_latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-body{
-    background-color: aquamarine;
+:root {
+    --background-color-aquamarine: aquamarine;
+    --border-color-black: black;
+    --color-text-black: black;
+    --color-text-white: white;
+    --color-text-green: green;
+    --color-text-greenyellow: greenyellow;
+    --color-text-red: red;
+    --color-text-rgba: rgba(18, 190, 84, .5);
+    --color-background-hover: white;
+    --color-background-hover-checked: #b4cfe7;
+    --color-background-active: #12be54;
+    --color-background-passive: #11dbdb;
+    --color-background-hover-cross: rgb(218, 93, 93);
+    --color-background-change-001: #11dbdb;
+    --color-background-change-002: #6acccc;
+    --color-background-change-003: #47b343;
+    --color-background-change-004: #12be54;
+    --color-color-change-001: black;
+    --color-color-change-002: #3a6868;
+    --color-color-change-003: #b2bebe;
+    --color-color-change-004: #ffffff;
+
+
 }
+
+body {
+    background-color: var(--background-color-aquamarine);
+}
+
 .page__title {
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 700;
     text-align: center;
     font-size: 25px;
-    
 }
-.input__field{
+
+.input__field {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
     position: relative;
-
 }
-.inp{
+
+.inp {
     font-family: 'Ubuntu';
     font-weight: 500;
     font-style: normal;
-
     font-size: 15px;
     margin: 0;
     border-radius: 15px;
@@ -55,12 +57,14 @@ body{
     width: 100%;
     margin-bottom: 25px;
 }
-.btn{
+
+.btn {
     padding: 5px 20px;
     border-radius: 15px;
     cursor: pointer;
 }
-.pluse{
+
+.pluse {
     border-radius: 45px;
     position: absolute;
     padding: 0;
@@ -69,21 +73,23 @@ body{
     height: 30px;
     right: 7px;
     top: 5px;
-    border: 2px solid green;
+    border: 2px solid var(--color-text-green);
 }
 
-.pluse:hover{
-    background-color: greenyellow;
+.pluse:hover {
+    background-color: var(--color-text-greenyellow);
 }
 
-.pluse::before, .pluse::after {
+.pluse::before,
+.pluse::after {
     content: '';
     position: absolute;
     top: 41%;
     left: 15%;
     width: 70%;
-    height: 5px; /* Толщина линии */
-    background-color: #37d637;
+    height: 5px;
+    background-color: var(--color-text-green);
+    transition: background-color 0.3s ease;
 }
 
 .pluse::before {
@@ -93,12 +99,12 @@ body{
 .pluse::after {
     transform: rotate(90deg);
 }
-.cards{
+
+.cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     gap: 10px;
-
 }
 
 .card {
@@ -106,60 +112,63 @@ body{
     flex-wrap: wrap;
     flex-direction: row;
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid var(--border-color-black);
     border-radius: 15px;
     width: 100%;
-    background-color: #11dbdb;
-    overflow: visible; /* Используем значение visible */
+    background-color: var(--color-background-passive);
+    overflow: visible;
+}
+
+.card-active {
+    animation: changeBackground 3s;
+    background-color: var(--color-background-active);
+    color: var(--color-text-white);
+}
+
+.card-passive {
+    animation: changeBackgroundBack 3s;
+    background-color: var(--color-background-passive);
+    color: var(--color-text-black);
 }
 
 @keyframes changeBackground {
     0% {
-      background-color: #0de4e4;
-        color: #445555;
+        background-color: var(--color-background-change-001);
+        color: var(--color-color-change-001);
     }
     25% {
-      background-color: #6acccc;
-        color: #3a6868;
+        background-color: var(--color-background-change-002);
+        color: var(--color-color-change-002);
     }
-    25% {
-        background-color: #47b343;
-        color: #0de4e4;
-      }
+    50% {
+        background-color: var(--color-background-change-003);
+        color: var(--color-color-change-003);
+    }
     100% {
-      background-color: #3bf381;
-        color: #ffffff;
+        background-color: var(--color-background-change-004);
+        color: var(--color-color-change-004);
     }
 }
-.card-active{
-    animation: changeBackground 3s ;
 
-    background-color: #12be54;
-    color: white;
-}
 @keyframes changeBackgroundBack {
     0% {
-        background-color: #12be54;
-        color: #ffffff;
+        background-color: var(--color-background-change-004);
+        color: var(--color-color-change-004);
     }
     25% {
-        background-color: #0f6868;
-        color: #0de4e4;
+        background-color: var(--color-background-change-003);
+        color: var(--color-color-change-003);
     }
-    25% {
-        background-color: #a6f3f3;
-        color: #3a6868;
-      }
+    50% {
+        background-color: var(--color-background-change-002);
+        color: var(--color-color-change-002);
+    }
     100% {
-        background-color: #0de4e4;  
-        color: #445555;
+        background-color: var(--color-background-change-001);
+        color: var(--color-color-change-001);
     }
 }
-.card-passive{
-    animation: changeBackgroundBack 3s ;
-    background-color: #11dbdb;
-    color: black;
-}
+
 .card__title {
     font-family: 'Ubuntu';
     font-weight: 500;
@@ -169,13 +178,8 @@ body{
     margin: auto auto auto 0;
     padding: 5px;
 }
-.card__h1{
 
-}
-
-.card__btn{
-    /* margin: 0; */
-    /* padding: 0; */
+.card__btn {
     cursor: pointer;
     border-radius: 45px;
     width: 30px;
@@ -184,73 +188,29 @@ body{
     transition: background-color 0.3s ease, color 0.s ease;
 }
 
-.card__btn:hover{
-    background-color: #b4cfe7;
+.card__btn:hover {
+    background-color: var(--color-background-hover);
 }
 
-
-.card__btn-activ:hover{
-    background-color: rgba(18, 190, 84, .5);
-    color: white;
+.card__btn-activ:hover {
+    background-color: var(--color-text-rgba);
+    color: var(--color-text-white);
 }
-
-
 
 .checkbox {
     position: relative;
-    border: 2px solid #333;
+    border: 2px solid var(--border-color-black);
     border-radius: 45px;
     cursor: pointer;
 }
 
-/* .checkbox::before,  .checkbox::after {
-    content: '';
-    position: absolute;
-    transform: translateY(-50%) rotate(-45deg);
-
-}
-.checkbox::before {
-    top: 40%;
-    left: 5px;
-    width: 16px;
-    height: 16px;
-    border: 17px solid #37d637;
-    border-top: none;
-    border-right: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
+.checkbox::before,
 .checkbox::after {
-    top: 50%;
-    left: 4px;
-    width: 24px;
-    height: 24px;
-    border: 3px solid transparent;
-    border-top: none;
-    border-right: none;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.checkbox.checked::before {
-    opacity: 1;
-}
-
-.checkbox.checked::after {
-    opacity: 1;
-}
-
-.checkbox.checked {
-    border-color: #37d637;
-} */
-.checkbox::before, .checkbox::after {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     content: '';
     position: absolute;
-    
-    background-color: #37d637; /* Цвет линии */
+    background-color: var(--color-text-green);
 }
 
 .checkbox::before {
@@ -265,7 +225,7 @@ body{
     top: 50%;
     right: -10%;
     width: 90%;
-    height: 5px; /* Толщина линии */
+    height: 5px;
     transform: rotate(-65deg);
 }
 
@@ -278,35 +238,35 @@ body{
 }
 
 .checkbox.checked {
-    border-color: #37d637;
-} 
-
-
+    border-color: var(--color-text-green);
+}
 
 .card__btn img {
-    width: 30px; /* Замените этот размер на желаемый */
-    height: 30px; /* Замените этот размер на желаемый */
+    width: 30px;
+    height: 30px;
 }
 
 .cross {
     position: relative;
     border-radius: 25px;
     cursor: pointer;
-    background-color: red;
-
-}
-.cross:hover, .cross::after{
-    background-color: rgb(218, 93, 93);
+    background-color: var(--color-text-red);
 }
 
-.cross::before, .cross::after {
+.cross:hover,
+.cross::after {
+    background-color: var(--color-background-hover-cross);
+}
+
+.cross::before,
+.cross::after {
     content: '';
     position: absolute;
     top: 41%;
     left: 15%;
     width: 70%;
-    height: 5px; /* Толщина линии */
-    background-color: black; /* Цвет линии */
+    height: 5px;
+    background-color: var(--border-color-black);
 }
 
 .cross::before {
@@ -316,22 +276,17 @@ body{
 .cross::after {
     transform: rotate(-45deg);
 }
-  
-@media screen and (max-width: 633px){
-    .card__title{
+
+@media screen and (max-width: 633px) {
+    .card__title {
         width: 70%;
     }
-    
 }
-/*media for touchS */
+
 @media (hover: none) {
-    .pluse:hover{
-        background-color: white;
-    }
-    .card__btn:hover{
-        background-color: white;
-    }
-    .card__btn:hover{
-    background-color: white;
+    .pluse:hover,
+    .card__btn:hover,
+    .card__btn:hover {
+        background-color: var(--color-background-hover);
     }
 }
