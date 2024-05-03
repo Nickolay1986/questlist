@@ -56,14 +56,14 @@ function addQuest(localIndex, text, localChecked) {
     }
     
     const cardEl = createEl('div', 'card');
+    
     const title = createEl('div', 'card__title');
     if (text) {
         title.textContent = text;
     } else {
         title.textContent = inp.value;
     }
-    cardEl.append(title);
-    cardsEl.append(cardEl);
+    cardEl.append();
 
     const btnDone = createEl('button', 'card__btn');
     btnDone.classList.add('checkbox')
@@ -72,8 +72,8 @@ function addQuest(localIndex, text, localChecked) {
         cardEl.classList.add('card-active')
     } 
     // btnDone.textContent = 'Выполнено';
-    btnDone.onclick = function () {
-        
+    btnDone.onclick = function (event) {
+        event.stopPropagation();
         if (btnDone.classList.contains('checked')) {
             checked = 0
             btnDone.classList.remove('checked')
@@ -89,14 +89,17 @@ function addQuest(localIndex, text, localChecked) {
         }
         // cardEl.classList.toggle('card-activ')
     } 
-    const btnCustom = createEl('button', 'card__btn');
-    const editImg = createEl('img', 'img');
-    editImg.src = './assets/edit.png';
-    editImg.alt = 'edit.png'
-    btnCustom.append(editImg)
-        // <img  src="./edit.png" alt="edit.png">
-    // btnCustom.textContent = 'Изменить'
-    btnCustom.onclick = function customPrompt() {
+    // const btnCustom = createEl('button', 'card__btn');
+    // const editImg = createEl('img', 'img');
+    // editImg.src = './assets/edit.png';
+    // editImg.alt = 'edit.png'
+    // btnCustom.append(editImg)
+    //     // <img  src="./edit.png" alt="edit.png">
+    // // btnCustom.textContent = 'Изменить'
+    // btnCustom.onclick = function () {
+        
+    // }
+    cardEl.onclick = function customPrompt() {
         
         // Отображение prompt с текстом по умолчанию
         const userInput = prompt('Введите задачу', title.textContent);
@@ -114,15 +117,24 @@ function addQuest(localIndex, text, localChecked) {
     
     const btnDelete = createEl('button', 'card__btn');
     btnDelete.classList.add('cross')
-    btnDelete.onclick = function () {
+    btnDelete.onclick = function (event) {
+
+        event.stopPropagation();
         removeFromLocalStorage(taskId)
         cardEl.remove()
+
     } 
     if (!localIndex) {
         saveToLocalStorage(taskId, title.textContent); 
     }
     inp.value = ''
-    cardEl.append(btnDone, btnCustom, btnDelete)
+    cardsEl.append(cardEl);
+    cardEl.append(
+            btnDone, 
+            title, 
+            // btnCustom, 
+            btnDelete
+        )
 
     
 }

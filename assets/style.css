@@ -30,7 +30,7 @@ body{
     font-style: normal;
     font-weight: 700;
     text-align: center;
-    font-size: 35px;
+    font-size: 25px;
     
 }
 .input__field{
@@ -47,11 +47,11 @@ body{
     font-weight: 500;
     font-style: normal;
 
-    font-size: 20px;
+    font-size: 15px;
     margin: 0;
     border-radius: 15px;
-    padding: 5px 75px 5px 20px;
-    height: 65px;
+    padding: 10px 75px 10px 20px;
+    height: auto;
     width: 100%;
     margin-bottom: 25px;
 }
@@ -65,10 +65,10 @@ body{
     position: absolute;
     padding: 0;
     margin: 0;
-    width: 55px;
-    height: 55px;
-    right: 15px;
-    top: 12px;
+    width: 30px;
+    height: 30px;
+    right: 7px;
+    top: 5px;
     border: 2px solid green;
 }
 
@@ -82,7 +82,7 @@ body{
     top: 41%;
     left: 15%;
     width: 70%;
-    height: 10px; /* Толщина линии */
+    height: 5px; /* Толщина линии */
     background-color: #37d637;
 }
 
@@ -97,22 +97,22 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
+    gap: 10px;
+
 }
 
-.card{
+.card {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    /* justify-content: space-between; */
-    /* align-items: center; */
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 5px;
     border: 1px solid black;
     border-radius: 15px;
     width: 100%;
     background-color: #11dbdb;
-
+    overflow: visible; /* Используем значение visible */
 }
+
 @keyframes changeBackground {
     0% {
       background-color: #0de4e4;
@@ -160,27 +160,28 @@ body{
     background-color: #11dbdb;
     color: black;
 }
-.card__title{
+.card__title {
     font-family: 'Ubuntu';
     font-weight: 500;
     font-style: normal;
-    font-size: 20px;
+    font-size: 15px;
+    width: 80%;
+    margin: auto auto auto 0;
+    padding: 5px;
+}
+.card__h1{
 
-    margin: auto auto auto 0;   
 }
-.card__tcard__btns{
-    
-}
+
 .card__btn{
     /* margin: 0; */
     /* padding: 0; */
     cursor: pointer;
     border-radius: 45px;
-    width: 47px;
-    height: 47px;
+    width: 30px;
+    height: 30px;
     position: relative;
     transition: background-color 0.3s ease, color 0.s ease;
-    margin-left: 10px;
 }
 
 .card__btn:hover{
@@ -197,19 +198,20 @@ body{
 
 .checkbox {
     position: relative;
-    width: 47px;
-    height: 47px;
     border: 2px solid #333;
     border-radius: 45px;
     cursor: pointer;
 }
 
-.checkbox::before {
+/* .checkbox::before,  .checkbox::after {
     content: '';
     position: absolute;
+    transform: translateY(-50%) rotate(-45deg);
+
+}
+.checkbox::before {
     top: 40%;
     left: 5px;
-    transform: translateY(-50%) rotate(-45deg);
     width: 16px;
     height: 16px;
     border: 17px solid #37d637;
@@ -220,11 +222,8 @@ body{
 }
 
 .checkbox::after {
-    content: '';
-    position: absolute;
     top: 50%;
     left: 4px;
-    transform: translateY(-50%) rotate(-45deg);
     width: 24px;
     height: 24px;
     border: 3px solid transparent;
@@ -244,7 +243,43 @@ body{
 
 .checkbox.checked {
     border-color: #37d637;
+} */
+.checkbox::before, .checkbox::after {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    content: '';
+    position: absolute;
+    
+    background-color: #37d637; /* Цвет линии */
 }
+
+.checkbox::before {
+    top: 50%;
+    left: -10%;
+    width: 80%;
+    height: 5px;
+    transform: rotate(65deg);
+}
+
+.checkbox::after {
+    top: 50%;
+    right: -10%;
+    width: 90%;
+    height: 5px; /* Толщина линии */
+    transform: rotate(-65deg);
+}
+
+.checkbox.checked::before {
+    opacity: 1;
+}
+
+.checkbox.checked::after {
+    opacity: 1;
+}
+
+.checkbox.checked {
+    border-color: #37d637;
+} 
 
 
 
@@ -255,8 +290,6 @@ body{
 
 .cross {
     position: relative;
-    width: 50px; /* Ширина */
-    height: 50px; /* Высота */
     border-radius: 25px;
     cursor: pointer;
     background-color: red;
@@ -269,7 +302,7 @@ body{
 .cross::before, .cross::after {
     content: '';
     position: absolute;
-    top: 45%;
+    top: 41%;
     left: 15%;
     width: 70%;
     height: 5px; /* Толщина линии */
@@ -284,3 +317,8 @@ body{
     transform: rotate(-45deg);
 }
   
+@media screen and (max-width: 633px){
+    .card__title{
+        width: 70%;
+    }
+}
