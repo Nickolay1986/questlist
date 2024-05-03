@@ -26,7 +26,12 @@ body{
     background-color: aquamarine;
 }
 .page__title {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
     text-align: center;
+    font-size: 35px;
+    
 }
 .input__field{
     display: flex;
@@ -43,10 +48,9 @@ body{
     font-style: normal;
 
     font-size: 20px;
-    padding: 0;
     margin: 0;
     border-radius: 15px;
-    padding: 5px 20px;
+    padding: 5px 75px 5px 20px;
     height: 65px;
     width: 100%;
     margin-bottom: 25px;
