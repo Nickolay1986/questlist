@@ -128,7 +128,7 @@ body{
     }
 }
 .card-active{
-    animation: changeBackground 7s ;
+    animation: changeBackground 3s ;
 
     background-color: #12be54;
     color: white;
@@ -152,7 +152,7 @@ body{
     }
 }
 .card-passive{
-    animation: changeBackgroundBack 7s ;
+    animation: changeBackgroundBack 3s ;
     background-color: #11dbdb;
     color: black;
 }
