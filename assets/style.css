@@ -72,7 +72,7 @@ body{
     border: 2px solid green;
 }
 
-.pluse:hover, .pluse::after{
+.pluse:hover{
     background-color: greenyellow;
 }
 
@@ -119,15 +119,15 @@ body{
         color: #445555;
     }
     25% {
-      background-color: #2eb4b4;
+      background-color: #6acccc;
         color: #3a6868;
     }
     25% {
-        background-color: #a3bebe;
+        background-color: #47b343;
         color: #0de4e4;
       }
     100% {
-      background-color: #12be54;
+      background-color: #3bf381;
         color: #ffffff;
     }
 }
@@ -143,11 +143,11 @@ body{
         color: #ffffff;
     }
     25% {
-        background-color: #a3bebe;
+        background-color: #0f6868;
         color: #0de4e4;
     }
     25% {
-        background-color: #2eb4b4;
+        background-color: #a6f3f3;
         color: #3a6868;
       }
     100% {
@@ -320,5 +320,18 @@ body{
 @media screen and (max-width: 633px){
     .card__title{
         width: 70%;
+    }
+    
+}
+/*media for touchS */
+@media (hover: none) {
+    .pluse:hover{
+        background-color: white;
+    }
+    .card__btn:hover{
+        background-color: white;
+    }
+    .card__btn:hover{
+    background-color: white;
     }
 }
