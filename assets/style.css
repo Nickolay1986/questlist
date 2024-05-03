@@ -1,0 +1,250 @@
+body{
+    background-color: aquamarine;
+}
+.page__title {
+    text-align: center;
+}
+.input__field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+
+}
+.inp{
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    border-radius: 15px;
+    padding: 5px 20px;
+    height: 65px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+.btn{
+    padding: 5px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.pluse{
+    border-radius: 45px;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 55px;
+    height: 55px;
+    right: 15px;
+    top: 12px;
+    border: 2px solid green;
+}
+
+.pluse:hover, .pluse::after{
+    background-color: greenyellow;
+}
+
+.pluse::before, .pluse::after {
+    content: '';
+    position: absolute;
+    top: 41%;
+    left: 15%;
+    width: 70%;
+    height: 10px; /* Толщина линии */
+    background-color: #37d637;
+}
+
+.pluse::before {
+    transform: rotate(1deg);
+}
+
+.pluse::after {
+    transform: rotate(90deg);
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 15px;
+    width: 100%;
+    background-color: #11dbdb;
+
+}
+@keyframes changeBackground {
+    0% {
+      background-color: #0de4e4;
+        color: #445555;
+    }
+    25% {
+      background-color: #2eb4b4;
+        color: #3a6868;
+    }
+    25% {
+        background-color: #a3bebe;
+        color: #0de4e4;
+      }
+    100% {
+      background-color: #12be54;
+        color: #ffffff;
+    }
+}
+.card-active{
+    animation: changeBackground 7s ;
+
+    background-color: #12be54;
+    color: white;
+}
+@keyframes changeBackgroundBack {
+    0% {
+        background-color: #12be54;
+        color: #ffffff;
+    }
+    25% {
+        background-color: #a3bebe;
+        color: #0de4e4;
+    }
+    25% {
+        background-color: #2eb4b4;
+        color: #3a6868;
+      }
+    100% {
+        background-color: #0de4e4;  
+        color: #445555;
+    }
+}
+.card-passive{
+    animation: changeBackgroundBack 7s ;
+    background-color: #11dbdb;
+    color: black;
+}
+.card__title{
+    margin: auto auto auto 0;
+    font-size: 30px;
+}
+.card__tcard__btns{
+    
+}
+.card__btn{
+    /* margin: 0; */
+    /* padding: 0; */
+    cursor: pointer;
+    border-radius: 45px;
+    width: 47px;
+    height: 47px;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.s ease;
+    margin-left: 10px;
+}
+
+.card__btn:hover{
+    background-color: rgb(180, 207, 231);
+}
+
+
+.card__btn-activ:hover{
+    background-color: rgba(18, 190, 84, .5);
+    color: white;
+}
+
+
+
+.checkbox {
+    position: relative;
+    width: 47px;
+    height: 47px;
+    border: 2px solid #333;
+    border-radius: 45px;
+    cursor: pointer;
+}
+
+.checkbox::before {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 5px;
+    transform: translateY(-50%) rotate(-45deg);
+    width: 16px;
+    height: 16px;
+    border: 17px solid #37d637;
+    border-top: none;
+    border-right: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.checkbox::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%) rotate(-45deg);
+    width: 24px;
+    height: 24px;
+    border: 3px solid transparent;
+    border-top: none;
+    border-right: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.checkbox.checked::before {
+    opacity: 1;
+}
+
+.checkbox.checked::after {
+    opacity: 1;
+}
+
+.checkbox.checked {
+    border-color: #37d637;
+}
+
+
+
+.card__btn img {
+    width: 30px; /* Замените этот размер на желаемый */
+    height: 30px; /* Замените этот размер на желаемый */
+}
+
+.cross {
+    position: relative;
+    width: 50px; /* Ширина */
+    height: 50px; /* Высота */
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: red;
+
+}
+.cross:hover, .cross::after{
+    background-color: rgb(218, 93, 93);
+}
+
+.cross::before, .cross::after {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    width: 70%;
+    height: 5px; /* Толщина линии */
+    background-color: black; /* Цвет линии */
+}
+
+.cross::before {
+    transform: rotate(45deg);
+}
+
+.cross::after {
+    transform: rotate(-45deg);
+}
+  
