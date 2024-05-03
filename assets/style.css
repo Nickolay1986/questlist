@@ -1,3 +1,27 @@
+/* ubuntu-regular - cyrillic_latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/ubuntu-v20-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* ubuntu-500 - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/ubuntu-v20-cyrillic_latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* ubuntu-700 - cyrillic_latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/ubuntu-v20-cyrillic_latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
 body{
     background-color: aquamarine;
 }
@@ -14,7 +38,11 @@ body{
 
 }
 .inp{
-    font-size: 30px;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 20px;
     padding: 0;
     margin: 0;
     border-radius: 15px;
@@ -129,8 +157,12 @@ body{
     color: black;
 }
 .card__title{
-    margin: auto auto auto 0;
-    font-size: 30px;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+
+    margin: auto auto auto 0;   
 }
 .card__tcard__btns{
     
@@ -148,7 +180,7 @@ body{
 }
 
 .card__btn:hover{
-    background-color: rgb(180, 207, 231);
+    background-color: #b4cfe7;
 }
 
 
